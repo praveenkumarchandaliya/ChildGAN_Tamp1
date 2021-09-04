@@ -36,7 +36,7 @@ layer_names = ['conv1_1', 'relu1_1', 'conv1_2', 'relu1_2', 'pool1',
 default_content_layers = ['relu1_1', 'relu2_1', 'relu3_1']
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--dataroot', type=str, default='/home/praveen/Downloads/Pattern/IndiaSkin/PR_Indian_Childdata_Skincolor/',
+parser.add_argument('--dataroot', type=str, default='Path of Dataset',
                     help='path to dataset folder (must follow PyTorch ImageFolder structure)')
 parser.add_argument('--batch_size', type=int,
                     default=32, help='input batch size, default=128')
@@ -65,7 +65,7 @@ parser.add_argument('--dimg', default='',
                     help="path to encoder (to continue training)")
 parser.add_argument('--dz', default=None,
                     help="path to decoder (to continue training)")
-parser.add_argument('--outf', default='/home/praveen/Downloads/Pattern/IndiaSkin/PRIndianChildGANSkinOutput/',
+parser.add_argument('--outf', default='Path of Output',
 
                     help='folder to output images and model checkpoints')
 parser.add_argument('--manual_seed', type=int, help='manual seed')
