@@ -207,14 +207,11 @@ if use_cuda:
     encoder = Encoder().cuda()
     decoder = Decoder().cuda()
     
-c = torch.load('/home/praveen/Downloads/Pattern/IndiaSkin/PRIndianChildGANSkinOutput/encoder_epoch_21000.pth')
+c = torch.load('encoder_epoch_21000.pth')
 encoder.load_state_dict(c)
-d = torch.load('/home/praveen/Downloads/Pattern/IndiaSkin/PRIndianChildGANSkinOutput/decoder_epoch_21000.pth')
+d = torch.load('decoder_epoch_21000.pth')
 decoder.load_state_dict(d)
-#outf = "/media/user_3/04156e0a-e35a-4e15-80f5-7d828698a9a8/ResultPR/test_result/CPAVAEChildGAN1/"
-#outf="/home/praveen/Downloads/Pattern/CPAVAEChildGAN/UTKFacePatternCropRes/"
-#outf="/home/praveen/Downloads/ChildGAN_Public_PR/PublicPR_result/Childappreal/"
-outf="/home/praveen/Downloads/Pattern/IndiaSkin/IndiaFromSkinTrainResult1/"
+outf="Result/"
 if not os.path.exists(outf):
     os.mkdir(outf)
 
@@ -247,9 +244,7 @@ def get_loader(img_dir,label,batch_size=2,img_size=128,mode="train",num_workers=
         images.append(np.array(image))
     images = np.array(images)
     return  images,file_list
-#/home/praveen/Downloads/Verification/FaceNet_Upload_Net/Pattern_Paper/Kinship/Missing_final/Young
-# /home/praveen/Downloads/Verification/FaceNet_Upload_Net/Pattern_Paper/Kinship/Missing_final/
-images,file_list=  get_loader(img_dir="/home/praveen/Downloads/Pattern/IndiaSkin/India_Test1/",img_size=128,label=0,batch_size=8)
+images,file_list=  get_loader(img_dir="Test",img_size=128,label=0,batch_size=8)
 print(file_list)
 images = torch.FloatTensor(images)
 batch_size = 8
