@@ -1,5 +1,5 @@
 # ChildGAN: Face Aging and Rejuvenation to Find Missing Children
-By Praveen Kumar Chandaliy and Neeta Nain
+By Praveen Kumar Chandaliya and Neeta Nain
 ### Introduction
 
 This repo is the official Pytorch implementation for our paper ChildGAN: Face Aging and Rejuvenation to Find Missing Children.
