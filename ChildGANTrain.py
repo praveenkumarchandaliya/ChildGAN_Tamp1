@@ -1,3 +1,5 @@
+# -*- coding:utf-8 -*-
+# Author: Praveen Kumar Chandaliya 
 from __future__ import print_function
 import argparse
 import os
@@ -20,11 +22,7 @@ import pickle
 import numpy as np
 from torch import autograd
 from misc import *
-#from testresult import  *
-#from FaceMatcherAllFeatureExtract import  *  # Single
-#from FaceMatcherAll import *
-#from FaceMatcherROCMathAll import *
-#from ImposterGeninePairGenerator import  *
+
 torch.cuda.set_device('cuda:0')
 
 layer_names = ['conv1_1', 'relu1_1', 'conv1_2', 'relu1_2', 'pool1',
@@ -74,7 +72,7 @@ parser.add_argument('--img_interval', type=int, default=1000, help='number of it
 parser.add_argument('--ngpu', type=int, default=1,
                     help='number of GPUs to use')
 args = parser.parse_args()
-print(args)
+
 use_cuda = torch.cuda.is_available()
 n_z = 50
 n_l = 5
@@ -99,13 +97,10 @@ if args.cuda:
 if torch.cuda.is_available() and not args.cuda:
     print("WARNING: You have a CUDA device, so you should probably run with --cuda")
 
-# Dataset loading
-# Normalization mean and standard deviation are set accordingly to the ones used
-# to train the vgg19 in torchvision model zoo
-# https://github.com/pytorch/vision
+
 transform = transforms.Compose([
     transforms.Scale(args.image_size),
-    #transforms.CenterCrop(args.image_size),
+    
     transforms.ToTensor(),
     transforms.Normalize(mean=(0.5, 0.5, 0.5),
                          std=(0.5, 0.5, 0.5))])
@@ -138,6 +133,8 @@ def weights_init(m):
     elif isinstance(m, nn.BatchNorm2d):
         init.normal(m.weight.data, std=0.015)
         m.bias.data.zero_()
+        
+#Self Attetion Block
 class Self_Attn(nn.Module):
     def __init__(self,in_dim,activation):
         super(Self_Attn,self).__init__()
@@ -150,7 +147,7 @@ class Self_Attn(nn.Module):
         self.softmax  = nn.Softmax(dim=1)
     def forward(self,x):
         m_batchsize,C,width,height = x.size()
-        #print("====Attamtion SRGAN",m_batchsize,C,width,height)
+        
         proj_query = self.query_conv(x).view(m_batchsize,-1,width*height).permute(0,2,1)
         proj_key = self.key_conv(x).view(m_batchsize,-1,width*height)
         energy = torch.bmm(proj_query,proj_key) #batch matrix-matrix product of matrices store
@@ -162,7 +159,7 @@ class Self_Attn(nn.Module):
         return out,attention
 
 
-
+#Resnet Block
 class resnet_block(nn.Module):
     def __init__(self, channel, kernel, stride, padding):
         super(resnet_block, self).__init__()
@@ -182,7 +179,7 @@ class resnet_block(nn.Module):
 
         return input + x  # Elementwise Sum
 
-
+# VGG19 Base Peceptual loss
 class VGG(nn.Module):
 
     def __init__(self, ngpu):
@@ -204,11 +201,10 @@ class VGG(nn.Module):
                 all_outputs.append(output.view(batch_size, -1))
         return all_outputs
 
-
 descriptor = VGG(ngpu)
 
 
-
+#Encoder Architecture
 class _Encoder(nn.Module):
     def __init__(self, ngpu):
         super(_Encoder, self).__init__()
@@ -259,11 +255,9 @@ class _Encoder(nn.Module):
 
 
 encoder = _Encoder(ngpu)
-#encoder.apply(weights_init)
-if args.encoder != '':
-   encoder.load_state_dict(torch.load(args.encoder))
-#print(encoder)
 
+
+#Decoder Architecture
 class _Decoder(nn.Module):
     def __init__(self, ngpu):
         super(_Decoder, self).__init__()
@@ -297,7 +291,7 @@ class _Decoder(nn.Module):
         output = self.decoder_conv(hidden)
         return output
 
-
+#  Attention Discriminator
 class Dimg(nn.Module):
     def __init__(self):
         super(Dimg,self).__init__()
@@ -338,22 +332,7 @@ class Dimg(nn.Module):
             nn.Softmax()
         )
 
-        ''' Patch GAN
-        self.fc_head1 = nn.Sequential(
-            nn.Linear(8 * 8, 64),
-            nn.Softmax()
-        )
-
-        self.fc_head2 = nn.Sequential(
-            nn.Linear(8*8,n_l),
-            nn.Softmax()
-        )
-        self.patchconv  = nn.Sequential(
-            nn.Conv2d(n_disc*8,1,3,1,1),
-
-        )
- 
-        '''
+       
     def forward(self,img,age,gender):
         l = age.repeat(1,n_age,1,1,)
         k = gender.repeat(1,n_gender,1,1,)
@@ -362,8 +341,7 @@ class Dimg(nn.Module):
         catted   = torch.cat((conv_img,conv_l),dim=1)
         total_conv = self.total_conv(catted)
         out, dp2 = self.attn1(total_conv)
-        #patchconv=   self.patchconv(out).view(-1,8*8)
-        #print("After Path GAN",patchconv.size())
+       
         total_conv = out.view(-1,8*8*args.image_size)
 
         body = self.fc_common(total_conv)  # size = 20  * 1024
@@ -372,22 +350,21 @@ class Dimg(nn.Module):
         return head1,head2,dp2
 
 decoder = _Decoder(ngpu)
-#decoder.apply(weights_init)
+
+# Model Weight at Test time
+if args.encoder != '':
+   encoder.load_state_dict(torch.load(args.encoder))
+   
 if args.decoder != '':
     decoder.load_state_dict(torch.load(args.decoder))
-print(decoder)
+
 
 netD_img = Dimg().cuda()
 if args.dimg != '':
    netD_img.load_state_dict(torch.load(args.dimg))
 
-#netD_img.apply(weights_init)
 
-#netD_z  = Dz().cuda()
-#if args.dz != '':
-#    netD_z.load_state_dict(torch.load(args.dz))
-#netD_z.apply(weights_init)
-
+# Loss function MSE and KL.
 mse = nn.MSELoss()
 def fpl_criterion(recon_features, targets):
     fpl = 0
@@ -412,7 +389,6 @@ if use_cuda:
 input = Variable(input)
 latent_labels = Variable(latent_labels)
 optimizerE = optim.Adam(encoder.parameters(),lr=0.0001,betas=(0.5,0.999))
-#optimizerD_z = optim.Adam(netD_z.parameters(),lr=0.0001,betas=(0.5,0.999))
 optimizerD_img = optim.Adam(netD_img.parameters(),lr=0.0002,betas=(0.5,0.999))
 optimizerD = optim.Adam(decoder.parameters(),lr=0.0002,betas=(0.5,0.999))
 ## fixed variables to regress / progress age
@@ -427,10 +403,8 @@ decoder.train()
 train_loss = 0
 d_loss = []
 g_loss = []
-def deleteContent(pairs_file):
-    pairs_file1 = open("clfpairwgancriticres9lr0001.txt", "w+")
-    pairs_file1.seek(0)
-    pairs_file1.truncate()
+
+
 i=0
 for epoch in range(args.niter):
     torch.cuda.empty_cache()
@@ -489,26 +463,22 @@ for epoch in range(args.niter):
             input.data.copy_(img_data)
 
             latent_z,ep1 = encoder(input)
-            #targets = descriptor(input)
-            #kld = kld_criterion(F.log_softmax(latent_z), latent_labels)
-            #kld.backward(create_graph=True)
+           
 
             recon = decoder(latent_z,age_ohe,img_gender_v)
             ## train D_img with real images
             netD_img.zero_grad()
             D_img, D_clf,dp2 = netD_img(img_data_v, age_ohe.view(batchSize, n_l, 1, 1), img_gender_v.view(batchSize, 1, 1, 1))
-            #d_loss_real = torch.nn.ReLU()(1.0 - D_img).mean()
+            
             d_loss_real = - torch.mean(D_img)
             d_loss_real.backward(retain_graph=False)
             D_reconst, _,dp2 = netD_img(recon, age_ohe.view(batchSize, n_l, 1, 1),
                                         img_gender_v.view(batchSize, 1, 1, 1))
-            #d_loss_fake = torch.nn.ReLU()(1.0 + D_reconst).mean()
+            
             d_loss_fake = D_reconst.mean()
-            # Total Discriminator_img Loss (pass x+l to d_img and pass G+l in d_img)
-            #D_loss = BCE(D_img, fake_label_dim) + BCE(D_reconst, fake_label_dim)
-            #D_loss  =  d_loss_real  + d_loss_fake
+            
             d_loss_fake.backward(retain_graph=True)
-            #gradient_penalty = calculate_gradient_penalty(img_data.data, recon.data, age_ohe, img_gender_v)
+            
             eta = torch.FloatTensor(args.batch_size, 1, 1, 1).uniform_(0, 1).cuda()
             eta = eta.expand(args.batch_size, img_data.size(1), img_data.size(2), img_data.size(3)).cuda()
 
@@ -523,7 +493,7 @@ for epoch in range(args.niter):
             else:
                 interpolated = interpolated
 
-            # define it to calculate gradient
+            # define it to calculate gradient WGAN_GAN
             interpolated = Variable(interpolated, requires_grad=True)
             # calculate gradient of probabilites with respect to example
 
@@ -546,8 +516,7 @@ for epoch in range(args.niter):
         for p in netD_img.parameters():
             p.requires_grad=False
 
-        #encoder.zero_grad()
-        #decoder.zero_grad()
+     
         latent_z, ep1 = encoder(input)
         targets = descriptor(input)
         kld = kld_criterion(F.log_softmax(latent_z), latent_labels)
@@ -556,29 +525,18 @@ for epoch in range(args.niter):
         recon_features = descriptor(recon)
         fpl = fpl_criterion(recon_features, targets)
         fpl.backward()
-        #Dz = netD_z(latent_z)
-        # send z to d_z
-        #Ez_loss = BCE(Dz, real_label)
+        
         loss = kld + fpl
         train_loss += loss.item()
         D_reconst,_,dp2 = netD_img(recon, age_ohe.view(batchSize, n_l, 1, 1), img_gender_v.view(batchSize, 1, 1, 1))
         G_img_loss = - D_reconst.mean()  # WGAN-gp
         reconst = decoder(latent_z.detach(), age_ohe, img_gender_v)
         G_tv_loss = TV_LOSS(reconst)
-        #EG_loss = loss + 0.0001 * G_img_loss + 0.01 * Ez_loss + G_tv_loss
+        
         EG_loss = loss + 0.0001 * G_img_loss +  G_tv_loss
         #EG_loss.backward()
         optimizerE.step()
         optimizerD.step()
-    #     ## train netD_z with prior distribution U(-1,1)
-        #netD_z.zero_grad()
-        #Dz_prior = netD_z(z_star)
-        #Dz = netD_z(latent_z.detach())
-        # Total Discriminator_z Loss (pass z to d_z and pass z_prior in d_z)
-        #Dz_loss = BCE(Dz_prior, real_label) + BCE(Dz, fake_label)
-        #Dz_loss.backward()
-        #optimizerD_z.step()
-        ## train D_img with real images
         netD_img.zero_grad()
         if i == 0:
             vutils.save_image(input.data,
@@ -596,32 +554,23 @@ for epoch in range(args.niter):
     if epoch % 3000 == 0:
         torch.save(encoder.state_dict(), '{}/encoder_epoch_{}.pth'.format(args.outf, epoch))
         torch.save(decoder.state_dict(), '{}/decoder_epoch_{}.pth'.format(args.outf, epoch))
-        #torch.save(netD_z.state_dict(), '{}/dz_epoch_{}.pth'.format(args.outf, epoch))
+        
         torch.save(netD_img.state_dict(), '{}/dimag_epoch_{}.pth'.format(args.outf, epoch))
         msg1 = "epoch:{}, step:{}".format(epoch + 1, i + 1)
         msg2 = format("FPL loss :%f" % (fpl.item()), "<30") + "|" + format("KLD :%f" % (kld.item()), "<30")
         msg3 = format("G_img_loss:%f" % (G_img_loss.item()), "<30")
-        msg4 = format("G_tv_loss:%f" % (G_tv_loss.item()), "<30") #+ "|" + "Ez_loss:%f" % (Ez_loss.item())
+        msg4 = format("G_tv_loss:%f" % (G_tv_loss.item()), "<30") 
         msg5 = format("D_img:%f" % (D_img.mean().item()), "<30") + "|" + format(
             "D_reconst:%f" % (D_reconst.mean().item()), "<30") \
                + "|" + format("D_loss:%f" % (d_loss.item()), "<30")
-        #msg6 = format("D_z:%f" % (Dz.mean().item()), "<30") + "|" + format("D_z_prior:%f" % (Dz_prior.mean().item()),
-        #                                                                    "<30") \
-        #       + "|" + format("Dz_loss:%f" % (Dz_loss.item()), "<30")
-
         print()
         print(msg1)
         print(msg2)
         print(msg3)
         print(msg4)
         print(msg5)
-        #print(msg6)
+        
         print()
-        print("-" * 80)
-        #evaluate_result(epoch)
-        #pairs_file = imposter_genuine()
-        #feature_extract(epoch)
-        #deleteContent(pairs_file)
-        print("================="+str(epoch)+"====Complet===========")
-        #matcher()
+        print("-" * 100)
+       
     i += 1
