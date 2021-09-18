@@ -1,3 +1,5 @@
+# -*- coding:utf-8 -*-
+# Author: Praveen Kumar Chandaliya 
 from __future__ import print_function
 import argparse
 import os
@@ -67,7 +69,7 @@ nc = 3
 out_size = image_size // 16  # 64
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
-
+# Self Attection Block
 class Self_Attn(nn.Module):
     def __init__(self,in_dim,activation):
         super(Self_Attn,self).__init__()
@@ -80,7 +82,7 @@ class Self_Attn(nn.Module):
         self.softmax  = nn.Softmax(dim=1)
     def forward(self,x):
         m_batchsize,C,width,height = x.size()
-        #print("====Attamtion SRGAN",m_batchsize,C,width,height)
+        
         proj_query = self.query_conv(x).view(m_batchsize,-1,width*height).permute(0,2,1)
         proj_key = self.key_conv(x).view(m_batchsize,-1,width*height)
         energy = torch.bmm(proj_query,proj_key) #batch matrix-matrix product of matrices store
@@ -92,7 +94,7 @@ class Self_Attn(nn.Module):
         return out,attention
 
 
-
+# Residule Block
 class resnet_block(nn.Module):
     def __init__(self, channel, kernel, stride, padding):
         super(resnet_block, self).__init__()
@@ -113,7 +115,7 @@ class resnet_block(nn.Module):
         return input + x  # Elementwise Sum
 
 
-
+# Encoder
 class Encoder(nn.Module):
     def __init__(self):
         super(Encoder, self).__init__()
@@ -150,25 +152,20 @@ class Encoder(nn.Module):
 
     def forward(self, input):
         batch_size = input.size(0)
-        #print("Decoder without Parallel...")
+        
         hidden = self.encoder(input)
         hidden = self.resnet_blocks(hidden)
         hidden = self.encoder_second(hidden)
-        #print("Encoder Size",hidden.size())
+        
         out,ep1  = self.attn1(hidden)
-        #print("Attan out Size", out.size())
+        
         hidden = out.view(batch_size, -1)
         mean, logvar = self.mean(hidden), self.logvar(hidden)
         latent_z = self.sampler(mean, logvar)
         return latent_z,ep1
-
-
 encoder = Encoder()
-#encoder.apply(weights_init)
-#if args.encoder != '':
-#    encoder.load_state_dict(torch.load(args.encoder))
-#print(encoder)
 
+# Decoder 
 class Decoder(nn.Module):
     def __init__(self):
         super(Decoder, self).__init__()
@@ -202,15 +199,18 @@ class Decoder(nn.Module):
         output = self.decoder_conv(hidden)
         return output
 
-
+# Check the cuda
 if use_cuda:
     encoder = Encoder().cuda()
     decoder = Decoder().cuda()
     
+    
+# Load the train encoder and decoder model weights    
 c = torch.load('encoder_epoch_21000.pth')
 encoder.load_state_dict(c)
 d = torch.load('decoder_epoch_21000.pth')
 decoder.load_state_dict(d)
+
 outf="Result/"
 if not os.path.exists(outf):
     os.mkdir(outf)
@@ -244,6 +244,8 @@ def get_loader(img_dir,label,batch_size=2,img_size=128,mode="train",num_workers=
         images.append(np.array(image))
     images = np.array(images)
     return  images,file_list
+
+#  Test is directory
 images,file_list=  get_loader(img_dir="Test",img_size=128,label=0,batch_size=8)
 print(file_list)
 images = torch.FloatTensor(images)
@@ -263,7 +265,7 @@ for batch in range(num_batches):
     fcount=0
     for file_name  in file_batch:
         print(file_name)
-        #target_gender = int(file_name.split("/")[-1].split("_")[1])
+        
         target_gender = int(file_name.split("/")[-1].split("_")[2])
         print(file_name,":",target_gender)
         
@@ -285,6 +287,7 @@ for batch in range(num_batches):
     x2 = 130
     y2 = 130
     folder = file_batch
+    # Store result according the test image id.
     for i in range(0, noOfColumn):
         dest_dir = file_batch[i].split("/")[-1]
         if not os.path.exists(outf+"/"+dest_dir):
@@ -296,7 +299,7 @@ for batch in range(num_batches):
             if(int(imgName)==1 or int(imgName)==11 or int(imgName)==21 or int(imgName)==31 or int(imgName)==41 or int(imgName)==51 or int(imgName)==61 or int(imgName)==71):
                 filename= "cat1_"+file_batch[i].split("/")[-1]
                 shutil.copy(file_batch[i],os.path.join(outf+dest_dir,file_batch[i].split("/")[-1]))
-                #shutil.copy(file_batch[i],os.path.join(outf+dest_dir,"1"+file_batch[i].split("/")[8]))
+                
             if (int(imgName) == 2 or int(imgName) == 12 or int(imgName) == 22 or int(imgName) == 32 or int(imgName) == 42 or int(imgName) == 52 or int(imgName) == 62 or int(imgName) == 72):
                 filename = "cat2_" + file_batch[i].split("/")[-1]
             if (int(imgName) == 3 or int(imgName) == 13 or int(imgName) == 23 or int(imgName) == 33 or int(imgName) == 43 or int(imgName) == 53 or int(imgName) == 63 or int(imgName) == 73):
