@@ -7,6 +7,9 @@ This repo is the official Pytorch implementation for our paper ChildGAN: Face Ag
 <div align="center">
 <img align="center" src="images/ChildGAN.png" width="600" alt="ChildGAN Framework">
 </div>
+<div align="center">
+Model Architecture.
+</div>
 <br/>
 
 ### Requirement
