@@ -34,7 +34,7 @@ Age progressed faces on four race (a) Asian, (b) Black, (c) White and (d) Indian
 <br/>
 
 ## Citation
-[Praveen Kumar Chandaliya](https://github.com/praveenkumarchandaliya/ChildGAN_Tamp1/) and [Neeta Nain](https://github.com/praveenkumarchandaliya/ChildGAN_Tamp1/). "ChildGAN: Face aging and rejuvenation to find missing children."Pattern Recognition *, 2022.
+[Praveen Kumar Chandaliya](https://github.com/praveenkumarchandaliya/ChildGAN_Tamp1/) and [Neeta Nain](https://github.com/praveenkumarchandaliya/ChildGAN_Tamp1/). "ChildGAN: Face aging and rejuvenation to find missing children". Journal of Pattern Recognition Elsevier, 2022 (https://www.researchgate.net/publication/360289072_ChildGAN_Face_Aging_and_Rejuvenation_to_Find_Missing_Children).
 ```
 @inproceedings{PraveenICD2022,
   title={ChildGAN: Face aging and rejuvenation to find missing children},
@@ -52,6 +52,26 @@ Age progressed faces on four race (a) Asian, (b) Black, (c) White and (d) Indian
   pages = {1-8}
 }
 
+@inproceedings{PraveenSAMSP2021,
+  title={Child Face Age Progression and Regression using Multi-Scale Patch GAN},
+  author={Praveen Kumar Chandaliya, Neeta Nain},
+  booktitle={International Joint Conference on Biometrics (IJCB)},
+  year={2021},
+  pages = {1-8}
+}
+
+
+
+@inproceedings{AWGAN2022,
+  title={AWGAN: Face Age Progression and Regression using Attention},
+  author={Praveen Kumar Chandaliya, Neeta Nain},
+  booktitle={Neural Computing and Applications},
+  year={2022},
+  volume = {34},
+  pages = {1-16}
+}
+
+ 
 
 ```
 
