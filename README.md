@@ -1,5 +1,7 @@
 # ChildGAN: Face Aging and Rejuvenation to Find Missing Children
-By Praveen Kumar Chandaliya and Neeta Nain
+By Praveen Kumar Chandaliya and Neeta Nain. 
+MRCD Dataset Agreement Form
+https://github.com/praveenkumarchandaliya/ChildGAN_Tamp1/blob/main/MRCD%20Dataset%20Agreement%20Form.pdf
 ### Introduction
 
 This repo is the official Pytorch implementation for our paper ChildGAN: Face Aging and Rejuvenation to Find Missing Children.
