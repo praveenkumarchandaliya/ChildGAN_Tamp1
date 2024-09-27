@@ -1,0 +1,3 @@
+The images are labeled in format “age_genderId_sequenceID, where age is the age of the person, genderId is the id of the person, i.e. 0 or 1. For boys and girls 0 and 1 are used as gender id respectively.
+Asian, Black, and White children dataset image (MRCD) to train the ChildGAN model, including web crawl and publicly collected images.
+Link For Download the MRCD dataset:  <a href="https://drive.google.com/file/d/1XuwLOEMHBgsehcj3HSzlGtpCYTaJnsKY/view?usp=drive_link">MRCD Dataset<a>
