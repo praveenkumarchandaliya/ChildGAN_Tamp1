@@ -1,8 +1,14 @@
 # ChildGAN: Face Aging and Rejuvenation to Find Missing Children
 By Praveen Kumar Chandaliya and Neeta Nain. 
 
-MRCD Dataset Agreement Form
+# MRCD Dataset Agreement Form
 https://github.com/praveenkumarchandaliya/ChildGAN_Tamp1/blob/main/MRCD%20Dataset%20Agreement%20Form.pdf
+
+The images are labeled “age_gender_sequenceID, " where age is the person's age, and gender is the person's id, i.e., 0 or 1. For boys and girls 0 and 1 are used as gender id respectively.
+Asian, Black, and White children dataset image (MRCD) to train the ChildGAN model, including web crawl and publicly collected images.
+
+# Link For Download the MRCD dataset:  
+<a href="https://drive.google.com/file/d/1XuwLOEMHBgsehcj3HSzlGtpCYTaJnsKY/view?usp=drive_link">MRCD Dataset<a>
 ### Introduction
 
 This repo is the official Pytorch implementation for our paper ChildGAN: Face Aging and Rejuvenation to Find Missing Children.
