@@ -13,7 +13,7 @@ The images are labeled in the format "age_genderId_sequenceID", where age is the
 Asian, Black, and White children dataset image (MRCD) to train the ChildGAN model, including web crawl and publicly collected images.
 
 # Directory structure: <br />
-root directory--> <br />
+     root directory--> <br />
               00--->0-3 Years Boys <br />
               01--->0-3 Years Girls <br />
               02--->4-8 Years Boys <br />
@@ -23,11 +23,11 @@ root directory--> <br />
               06--->13-16 Years Boys <br />
               07--->13-16 Year Girls <br />
               08--->17-20 Years Boys <br />
-              09--->17-20 Year Girls 
+              09--->17-20 Year Girls <br />
               
 
-
-
+<br/>
+Dataset link for download: <
 <a href="https://drive.google.com/file/d/1_jOclJy3AFbSHzKsuIh7QD-UOsb5p2RT/view?usp=drive_link">MRCD Dataset<a>
 
 
