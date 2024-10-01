@@ -12,17 +12,18 @@ Asian, Black, and White children dataset image (MRCD) to train the ChildGAN mode
 The images are labeled in the format "age_genderId_sequenceID", where age is the age of the children, and genderId is the children's id, i.e., 0 or 1. For boys and girls, 0 and 1 are used as gender id, respectively.
 
 # Directory structure: <br />
+
    (Asian, Black, White) root directory--> <br />
-     &nbsp; &nbsp;   00--->0-3 Years Boys <br />
-     &nbsp; &nbsp;   01--->0-3 Years Girls <br />
-     &nbsp; &nbsp;   02--->4-8 Years Boys <br />
-     &nbsp; &nbsp;   03--->4-8 Year Girls <br />
-     &nbsp; &nbsp;   04--->9-12 Years Boys <br />
-     &nbsp; &nbsp;   05--->9-12 Year Girls <br />
-     &nbsp; &nbsp;   06--->13-16 Years Boys <br />
-     &nbsp; &nbsp;   07--->13-16 Year Girls <br />
-     &nbsp; &nbsp;   08--->17-20 Years Boys <br />
-     &nbsp; &nbsp;   09--->17-20 Year Girls <br />
+     &nbsp; &nbsp;  &nbsp;  00--->0-3 Years Boys <br />
+     &nbsp; &nbsp;  &nbsp;   01--->0-3 Years Girls <br />
+     &nbsp; &nbsp;  &nbsp; 02--->4-8 Years Boys <br />
+     &nbsp; &nbsp;  &nbsp; 03--->4-8 Year Girls <br />
+     &nbsp; &nbsp;  &nbsp; 04--->9-12 Years Boys <br />
+     &nbsp; &nbsp;  &nbsp; 05--->9-12 Year Girls <br />
+     &nbsp; &nbsp; &nbsp;  06--->13-16 Years Boys <br />
+     &nbsp; &nbsp; &nbsp;  07--->13-16 Year Girls <br />
+     &nbsp; &nbsp; &nbsp;  08--->17-20 Years Boys <br />
+     &nbsp; &nbsp; &nbsp;  09--->17-20 Year Girls <br />
               
 
 <br/>
