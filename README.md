@@ -29,6 +29,26 @@ More implementation and ethical details are provided in the associated publicati
 
 # Directory structure: <br />
 
+(root)
+├── Asian/
+│   ├── 00/  → 0–3 Years Boys
+│   ├── 01/  → 0–3 Years Girls
+│   ├── 02/  → 4–8 Years Boys
+│   ├── 03/  → 4–8 Years Girls
+│   ├── 04/  → 9–12 Years Boys
+│   ├── 05/  → 9–12 Years Girls
+│   ├── 06/  → 13–16 Years Boys
+│   ├── 07/  → 13–16 Years Girls
+│   ├── 08/  → 17–20 Years Boys
+│   └── 09/  → 17–20 Years Girls
+│
+├── Black/
+│   └── (same structure as above)
+│
+└── White/
+    └── (same structure as above)
+
+
    (Asian, Black, White) root directory--> <br />
      &nbsp; &nbsp;  &nbsp;  00--->0-3 Years Boys <br />
      &nbsp; &nbsp;  &nbsp;   01--->0-3 Years Girls <br />
