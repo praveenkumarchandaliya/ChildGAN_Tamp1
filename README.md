@@ -132,7 +132,8 @@ ResearchGate: https://www.researchgate.net/publication/360289072_ChildGAN_Face_A
 }
 
 ```
-## 📧 Contact: nnain.cse@mnit.ac.in
+## 👤 Neeta Nain, ✉️ nnain.cse@mnit.ac.in 
+## 👤 Praveen Kumar Chandaliya ✉️ pkc@aid.svnit.ac.in
 
 
 
