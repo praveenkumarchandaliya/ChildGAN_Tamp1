@@ -7,7 +7,7 @@ https://github.com/praveenkumarchandaliya/ChildGAN_Tamp1/blob/main/MRCD%20Datase
 
 The images are labeled “age_gender_sequenceID, " where age is the person's age, and gender is the person's id, i.e., 0 or 1. For boys and girls, 0 and 1 are used as gender id, respectively.
 
-# Research project Grant and Institutions
+# Research project Grant and Institution
 Multi-Racial Child Dataset is developed at the Department of Computer Science and Engineering of the **Malaviya  National Institute of Technology Jaipur** as part of a research project under grant No. 4 (13)/2019-ITEA by the **Ministry of Electronics and Information Technology (MeitY), Government of India**. 
 
 
