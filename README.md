@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="assets/mnit_logo.png" alt="MNIT Jaipur Logo" width="120"/>
+</p>
 # ChildGAN: Face Aging and Rejuvenation to Find Missing Children
 
  🤝 Contributors: Praveen Kumar Chandaliya and **Neeta Nain**
@@ -130,9 +133,8 @@ ResearchGate: https://www.researchgate.net/publication/360289072_ChildGAN_Face_A
   pages = {1-16}
 }
 
- 
-
 ```
+## Contact: nnain.cse@mnit.ac.in
 
 
 
