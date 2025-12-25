@@ -1,16 +1,17 @@
 # ChildGAN: Face Aging and Rejuvenation to Find Missing Children
 
-Contributors: Praveen Kumar Chandaliya and **Neeta Nain**
+ 🤝 Contributors: Praveen Kumar Chandaliya and **Neeta Nain**
 
 # MRCD Dataset Agreement Form
 https://github.com/praveenkumarchandaliya/ChildGAN_Tamp1/blob/main/MRCD%20Dataset%20Agreement%20Form.pdf
 
 The images are labeled “age_gender_sequenceID, " where age is the person's age, and gender is the person's id, i.e., 0 or 1. For boys and girls, 0 and 1 are used as gender id, respectively.
 
-# Research project Grant and Institution
+# Institution
 Multi-Racial Child Dataset is developed at the Department of Computer Science and Engineering of the **Malaviya  National Institute of Technology Jaipur** as part of a research project under grant No. 4 (13)/2019-ITEA by the **Ministry of Electronics and Information Technology (MeitY), Government of India**. 
 
-
+## 🙏 Acknowledgements and Research Grant
+This research is based upon work supported by the Ministry of Electronics and Information Technology (MeitY), Government of India, under Grant No. 4 (13)/2019-ITEA. We gratefully acknowledge the support of NVIDIA Corporation with the donation of the TITAN V GPU used for this research. We are also grateful to Cognitec with the donation of the FaceVACS-DBScanID5.6 software for this work.
 
 # Description of MRCD dataset:  
 The MRCD contains 64,965 child face images from four racial groups: Asian, Black, White, and Indian.
@@ -27,7 +28,7 @@ Asian, Black, and White subsets are used to train the ChildGAN model using publi
 
 More implementation and ethical details are provided in the associated publications.
 
-# Directory structure: <br />
+# 📂 Directory structure: <br />
 
 (root)<br/>
 ├── Asian/<br/>
@@ -67,12 +68,12 @@ Model Architecture.
 </div>
 <br/>
 
-### Requirement
+### ⚙️ Requirement
 
 - Python 2.7 or higher
 - Pytorch 
 
-### Training and Testing ChildGAN
+### 🚀 Training and Testing ChildGAN
 
 1. Train Model: `ChildGANTrain.py` file.
 
@@ -91,7 +92,7 @@ Age progressed faces on four race (a) Asian, (b) Black, (c) White and (d) Indian
 ## MRCD Dataset
 MRCD Dataset present in CRFW directory: https://github.com/praveenkumarchandaliya/ChildGAN_Tamp1/tree/main/CRFW
 
-## Related Article and Citation
+## 📎 Related Article and Citation
 [Praveen Kumar Chandaliya](https://scholar.google.com/citations?user=cx-vENIAAAAJ&hl=en) and [Neeta Nain](https://scholar.google.com/citations?user=CWsTU7EAAAAJ&hl=en). ChildGAN: Face aging and rejuvenation to find missing children. Journal of Pattern Recognition Elsevier, 2022 <br/> 
 DOI: https://doi.org/10.1016/j.patcog.2022.108761   <br/>
 ResearchGate: https://www.researchgate.net/publication/360289072_ChildGAN_Face_Aging_and_Rejuvenation_to_Find_Missing_Children.
