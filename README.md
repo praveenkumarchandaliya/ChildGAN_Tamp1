@@ -31,8 +31,7 @@ Each image has a resolution of 128 × 128 pixels, with a DPI range of 72–96.
 
 The Asian, Black, and White child image subsets (MRCD) are used to train the ChildGAN model, and include images collected through web crawling and publicly available sources.
 
-Images are labeled using the format:
-age_genderId_sequenceID
+Images are labeled using the format: **age_genderId_sequenceID**
 
 age: age of the child
 
