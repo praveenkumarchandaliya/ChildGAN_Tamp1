@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/mnit_logo.png" alt="MNIT Jaipur Logo" width="120"/>
+  <img src="images/MNIT.png" alt="MNIT Jaipur" width="120"/>
 </p>
 # ChildGAN: Face Aging and Rejuvenation to Find Missing Children
 
