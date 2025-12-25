@@ -11,7 +11,7 @@ The images are labeled “age_gender_sequenceID, " where age is the person's age
 # <img src="images/MNITJ.png" alt="MNIT Jaipur" width="50"/> Institution
 Multi-Racial Child Dataset is developed at the Department of Computer Science and Engineering of the **Malaviya  National Institute of Technology Jaipur** as part of a research project under grant No. 4 (13)/2019-ITEA by the **Ministry of Electronics and Information Technology (MeitY), Government of India**. 
 
-## 🙏 Acknowledgements and Research Grant
+## 🙏 Acknowledgements and Research Project
 This research is based upon work supported by the Ministry of Electronics and Information Technology (MeitY), Government of India, under Grant No. 4 (13)/2019-ITEA. We gratefully acknowledge the support of NVIDIA Corporation with the donation of the TITAN V GPU used for this research. We are also grateful to Cognitec with the donation of the FaceVACS-DBScanID5.6 software for this work.
 
 # 📌 Description of MRCD dataset:  
@@ -89,7 +89,7 @@ Age progressed faces on four race (a) Asian, (b) Black, (c) White and (d) Indian
 </div>
 <br/>
 
-## MRCD Dataset
+## 📦 MRCD Dataset
 MRCD Dataset present in CRFW directory: https://github.com/praveenkumarchandaliya/ChildGAN_Tamp1/tree/main/CRFW
 
 ## 📎 Related Article and Citation
