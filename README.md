@@ -92,7 +92,7 @@ Age progressed faces on four race (a) Asian, (b) Black, (c) White and (d) Indian
 MRCD Dataset present in CRFW directory: https://github.com/praveenkumarchandaliya/ChildGAN_Tamp1/tree/main/CRFW
 
 ## Related Article and Citation
-[Praveen Kumar Chandaliya](https://scholar.google.com/citations?user=cx-vENIAAAAJ&hl=en) and [Neeta Nain](https://scholar.google.com/citations?user=CWsTU7EAAAAJ&hl=en). "ChildGAN: Face aging and rejuvenation to find missing children". Journal of Pattern Recognition Elsevier, 2022 <br/> 
+[Praveen Kumar Chandaliya](https://scholar.google.com/citations?user=cx-vENIAAAAJ&hl=en) and [Neeta Nain](https://scholar.google.com/citations?user=CWsTU7EAAAAJ&hl=en). ChildGAN: Face aging and rejuvenation to find missing children. Journal of Pattern Recognition Elsevier, 2022 <br/> 
 DOI: https://doi.org/10.1016/j.patcog.2022.108761   <br/>
 ResearchGate: https://www.researchgate.net/publication/360289072_ChildGAN_Face_Aging_and_Rejuvenation_to_Find_Missing_Children.
 ```
@@ -109,7 +109,8 @@ ResearchGate: https://www.researchgate.net/publication/360289072_ChildGAN_Face_A
   author={Praveen Kumar Chandaliya, Neeta Nain},
   booktitle={International Conference on Biometrics (ICB)},
   year={2019},
-  pages = {1-8}
+  pages = {1-8},
+  doi={10.1109/ICB45273.2019.8987410}
 }
 
 @inproceedings{PraveenSAMSP2021,
@@ -119,8 +120,6 @@ ResearchGate: https://www.researchgate.net/publication/360289072_ChildGAN_Face_A
   year={2021},
   pages = {1-8}
 }
-
-
 
 @inproceedings{AWGAN2022,
   title={AWGAN: Face Age Progression and Regression using Attention},
