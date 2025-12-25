@@ -29,24 +29,25 @@ More implementation and ethical details are provided in the associated publicati
 
 # Directory structure: <br />
 
-(root)
-├── Asian/  <br />
-│   ├── 00/  → 0–3 Years Boys  <br />
-│   ├── 01/  → 0–3 Years Girls
-│   ├── 02/  → 4–8 Years Boys
-│   ├── 03/  → 4–8 Years Girls
-│   ├── 04/  → 9–12 Years Boys
-│   ├── 05/  → 9–12 Years Girls
-│   ├── 06/  → 13–16 Years Boys
-│   ├── 07/  → 13–16 Years Girls
-│   ├── 08/  → 17–20 Years Boys
-│   └── 09/  → 17–20 Years Girls
-│
-├── Black/
-│   └── (same structure as above)
-│
-└── White/
-    └── (same structure as above)
+(root)<br/>
+├── Asian/<br/>
+│   ├── 00/ → 0–3 Years Boys<br/>
+│   ├── 01/ → 0–3 Years Girls<br/>
+│   ├── 02/ → 4–8 Years Boys<br/>
+│   ├── 03/ → 4–8 Years Girls<br/>
+│   ├── 04/ → 9–12 Years Boys<br/>
+│   ├── 05/ → 9–12 Years Girls<br/>
+│   ├── 06/ → 13–16 Years Boys<br/>
+│   ├── 07/ → 13–16 Years Girls<br/>
+│   ├── 08/ → 17–20 Years Boys<br/>
+│   └── 09/ → 17–20 Years Girls<br/>
+│<br/>
+├── Black/<br/>
+│   └── (same structure as above)<br/>
+│<br/>
+└── White/<br/>
+    └── (same structure as above)<br/>
+
 
 
    (Asian, Black, White) root directory--> <br />
