@@ -13,19 +13,18 @@ Multi-Racial Child Dataset is developed at the Department of Computer Science an
 ## 🙏 Acknowledgements and Research Grant
 This research is based upon work supported by the Ministry of Electronics and Information Technology (MeitY), Government of India, under Grant No. 4 (13)/2019-ITEA. We gratefully acknowledge the support of NVIDIA Corporation with the donation of the TITAN V GPU used for this research. We are also grateful to Cognitec with the donation of the FaceVACS-DBScanID5.6 software for this work.
 
-# Description of MRCD dataset:  
-The MRCD contains 64,965 child face images from four racial groups: Asian, Black, White, and Indian.
+# 📌 Description of MRCD dataset:  
+✅ The MRCD contains 64,965 child face images from four racial groups: Asian, Black, White, and Indian.
 
-Dataset distribution: Asian (17,211), Black (13,354), White (19,297), Indian (15,103).
+✅ Dataset distribution: Asian (17,211), Black (13,354), White (19,297), Indian (15,103).
 
-All images are resized to 128 × 128 pixels with 72–96 DPI resolution.
+✅ All images are resized to 128 × 128 pixels with 72–96 DPI resolution.
 
-The dataset is intended only for academic and research purposes.
+✅ The dataset is intended only for academic and research purposes.
 
-Images are labeled as **age_genderId_sequenceID**, where genderId = 0 (boy) and 1 (girl).
+✅ Images are labeled as **age_genderId_sequenceID**, where genderId = 0 (boy) and 1 (girl).
 
-Asian, Black, and White subsets are used to train the ChildGAN model using publicly available and web-crawled data.
-
+✅ Asian, Black, and White subsets are used to train the ChildGAN model using publicly available and web-crawled data. 
 More implementation and ethical details are provided in the associated publications.
 
 # 📂 Directory structure: <br />
@@ -56,7 +55,7 @@ More implementation and ethical details are provided in the associated publicati
 <a href="https://drive.google.com/file/d/1_jOclJy3AFbSHzKsuIh7QD-UOsb5p2RT/view?usp=drive_link">MRCD Dataset<a>
 
 
-### Introduction
+### 🧠 Methodology
 
 This repo is the official Pytorch implementation for our paper ChildGAN: Face Aging and Rejuvenation to Find Missing Children.
 
@@ -79,7 +78,7 @@ Model Architecture.
 
 2. Test  Model: `ChildGANTest.py` file.
 
-### Generalization Result
+###  🧪 Generalization Result
 
 <div align="center">
 <img align="center" src="images/SkinColorFinal.png" alt="Generalization">
