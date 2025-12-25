@@ -1,7 +1,5 @@
-<p align="center">
-  <img src="images/MNITJ.png" alt="MNIT Jaipur" width="120"/>
-</p>
-# ChildGAN: Face Aging and Rejuvenation to Find Missing Children
+
+# <img src="images/MNITJ.png" alt="MNIT Jaipur" width="120"/> ChildGAN: Face Aging and Rejuvenation to Find Missing Children
 
  🤝 Contributors: Praveen Kumar Chandaliya and **Neeta Nain**
 
