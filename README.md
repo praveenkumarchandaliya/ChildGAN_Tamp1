@@ -31,9 +31,7 @@ The images are labeled in the format **age_genderId_sequenceID**, where age is t
      &nbsp; &nbsp; &nbsp;  07--->13-16 Year Girls <br />
      &nbsp; &nbsp; &nbsp;  08--->17-20 Years Boys <br />
      &nbsp; &nbsp; &nbsp;  09--->17-20 Year Girls <br />
-              
 
-<br/>
 # Dataset link for download: <br/>
 <a href="https://drive.google.com/file/d/1_jOclJy3AFbSHzKsuIh7QD-UOsb5p2RT/view?usp=drive_link">MRCD Dataset<a>
 
