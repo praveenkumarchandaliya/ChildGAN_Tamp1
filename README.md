@@ -13,33 +13,19 @@ Multi-Racial Child Dataset is developed at the Department of Computer Science an
 
 
 # Description of MRCD dataset:  
-The Multi-Racial Child Dataset (MRCD) contains 64,965 face images spanning four racial groups: Asian, Black, White, and Indian.
+The MRCD contains 64,965 child face images from four racial groups: Asian, Black, White, and Indian.
 
-Distribution across racial groups:
+Dataset distribution: Asian (17,211), Black (13,354), White (19,297), Indian (15,103).
 
-Asian: 17,211 face images
+All images are resized to 128 × 128 pixels with 72–96 DPI resolution.
 
-Black: 13,354 face images
+The dataset is intended only for academic and research purposes.
 
-White: 19,297 face images
+Images are labeled as **age_genderId_sequenceID**, where genderId = 0 (boy) and 1 (girl).
 
-Indian: 15,103 face images
+Asian, Black, and White subsets are used to train the ChildGAN model using publicly available and web-crawled data.
 
-The dataset is intended strictly for research and academic purposes.
-
-Each image has a resolution of 128 × 128 pixels, with a DPI range of 72–96.
-
-The Asian, Black, and White child image subsets (MRCD) are used to train the ChildGAN model, and include images collected through web crawling and publicly available sources.
-
-Images are labeled using the format: **age_genderId_sequenceID**
-
-age: age of the child
-
-genderId: gender label (0 = boy, 1 = girl)
-
-sequenceID: unique image identifier
-
-Additional details regarding dataset construction, preprocessing, and usage protocols are available in the associated publications.
+More implementation and ethical details are provided in the associated publications.
 
 # Directory structure: <br />
 
