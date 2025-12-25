@@ -30,8 +30,8 @@ More implementation and ethical details are provided in the associated publicati
 # Directory structure: <br />
 
 (root)
-├── Asian/
-│   ├── 00/  → 0–3 Years Boys
+├── Asian/  <br />
+│   ├── 00/  → 0–3 Years Boys  <br />
 │   ├── 01/  → 0–3 Years Girls
 │   ├── 02/  → 4–8 Years Boys
 │   ├── 03/  → 4–8 Years Girls
