@@ -1,11 +1,18 @@
 # ChildGAN: Face Aging and Rejuvenation to Find Missing Children
-By Praveen Kumar Chandaliya and Neeta Nain. 
+
+Contributors: Praveen Kumar Chandaliya and **Neeta Nain**
 
 # MRCD Dataset Agreement Form
 https://github.com/praveenkumarchandaliya/ChildGAN_Tamp1/blob/main/MRCD%20Dataset%20Agreement%20Form.pdf
 
 The images are labeled “age_gender_sequenceID, " where age is the person's age, and gender is the person's id, i.e., 0 or 1. For boys and girls, 0 and 1 are used as gender id, respectively.
 
+# Research project Grant
+Multi-Racial Child Dataset is developed at the Department of Computer Science and Engineering of the Malaviya  National Institute of Technology as part of a research project under grant No. 4 (13)/2019-ITEA by the Ministry of 
+Electronics and Information Technology (MeitY), Government of India. 
+
+The Multi-Racial Child Dataset (MRCD) contains 64,965 face images of four race groups (Asian, Black, White, and Indian). Asian race contains 17,211 face images. The black race contains 13,354 face images. White race 
+contains 19,297 face images. Indian ethnicity contains 15,103 face images. The datasets are available for research  purposes and academic use only according to the conditions of use as  
 
 # MRCD dataset:  
 Asian, Black, and White children dataset image (MRCD) to train the ChildGAN model, including web crawl and publicly collected images.
