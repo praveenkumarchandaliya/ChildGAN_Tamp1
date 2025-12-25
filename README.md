@@ -74,7 +74,7 @@ Age progressed faces on four race (a) Asian, (b) Black, (c) White and (d) Indian
 ## MRCD Dataset
 MRCD Dataset present in CRFW directory: https://github.com/praveenkumarchandaliya/ChildGAN_Tamp1/tree/main/CRFW
 ## Citation
-[Praveen Kumar Chandaliya](https://github.com/praveenkumarchandaliya/ChildGAN_Tamp1/) and [Neeta Nain](https://github.com/praveenkumarchandaliya/ChildGAN_Tamp1/). "ChildGAN: Face aging and rejuvenation to find missing children". Journal of Pattern Recognition Elsevier, 2022 (https://www.researchgate.net/publication/360289072_ChildGAN_Face_Aging_and_Rejuvenation_to_Find_Missing_Children).
+[Praveen Kumar Chandaliya](https://scholar.google.com/citations?user=cx-vENIAAAAJ&hl=en) and [Neeta Nain](https://scholar.google.com/citations?user=CWsTU7EAAAAJ&hl=en). "ChildGAN: Face aging and rejuvenation to find missing children". Journal of Pattern Recognition Elsevier, 2022 (https://www.researchgate.net/publication/360289072_ChildGAN_Face_Aging_and_Rejuvenation_to_Find_Missing_Children).
 ```
 @inproceedings{PraveenICD2022,
   title={ChildGAN: Face aging and rejuvenation to find missing children},
