@@ -6,7 +6,7 @@
 # ✍️ MRCD Dataset Agreement Form
 https://github.com/praveenkumarchandaliya/ChildGAN_Tamp1/blob/main/MRCD%20Dataset%20Agreement%20Form.pdf
 
-The images are labeled “age_gender_sequenceID, " where age is the person's age, and gender is the person's id, i.e., 0 or 1. For boys and girls, 0 and 1 are used as gender id, respectively.
+The images are labeled **age_gender_sequenceID** where age is the person's age, and gender is the person's id, i.e., 0 or 1. For boys and girls, 0 and 1 are used as gender id, respectively.
 
 # <img src="images/MNITJ.png" alt="MNIT Jaipur" width="50"/> Institution
 Multi-Racial Child Dataset is developed at the Department of Computer Science and Engineering of the **Malaviya  National Institute of Technology Jaipur** as part of a research project under grant No. 4 (13)/2019-ITEA by the **Ministry of Electronics and Information Technology (MeitY), Government of India**. 
