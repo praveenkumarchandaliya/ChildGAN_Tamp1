@@ -83,8 +83,8 @@ MRCD Dataset present in CRFW directory: https://github.com/praveenkumarchandaliy
 
 ## Related Links Article and Citation
 [Praveen Kumar Chandaliya](https://scholar.google.com/citations?user=cx-vENIAAAAJ&hl=en) and [Neeta Nain](https://scholar.google.com/citations?user=CWsTU7EAAAAJ&hl=en). "ChildGAN: Face aging and rejuvenation to find missing children". Journal of Pattern Recognition Elsevier, 2022
-DOI: (https://doi.org/10.1016/j.patcog.2022.108761)
-ResearchGate: (https://www.researchgate.net/publication/360289072_ChildGAN_Face_Aging_and_Rejuvenation_to_Find_Missing_Children).
+DOI: https://doi.org/10.1016/j.patcog.2022.108761   <br/>
+ResearchGate: https://www.researchgate.net/publication/360289072_ChildGAN_Face_Aging_and_Rejuvenation_to_Find_Missing_Children.
 ```
 @inproceedings{PraveenICD2022,
   title={ChildGAN: Face aging and rejuvenation to find missing children},
