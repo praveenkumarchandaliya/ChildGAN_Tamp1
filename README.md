@@ -132,7 +132,7 @@ ResearchGate: https://www.researchgate.net/publication/360289072_ChildGAN_Face_A
 }
 
 ```
-## Contact: nnain.cse@mnit.ac.in
+## 📧 Contact: nnain.cse@mnit.ac.in
 
 
 
