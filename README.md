@@ -50,18 +50,7 @@ More implementation and ethical details are provided in the associated publicati
 
 
 
-   (Asian, Black, White) root directory--> <br />
-     &nbsp; &nbsp;  &nbsp;  00--->0-3 Years Boys <br />
-     &nbsp; &nbsp;  &nbsp;   01--->0-3 Years Girls <br />
-     &nbsp; &nbsp;  &nbsp; 02--->4-8 Years Boys <br />
-     &nbsp; &nbsp;  &nbsp; 03--->4-8 Year Girls <br />
-     &nbsp; &nbsp;  &nbsp; 04--->9-12 Years Boys <br />
-     &nbsp; &nbsp;  &nbsp; 05--->9-12 Year Girls <br />
-     &nbsp; &nbsp; &nbsp;  06--->13-16 Years Boys <br />
-     &nbsp; &nbsp; &nbsp;  07--->13-16 Year Girls <br />
-     &nbsp; &nbsp; &nbsp;  08--->17-20 Years Boys <br />
-     &nbsp; &nbsp; &nbsp;  09--->17-20 Year Girls <br />
-
+ 
 # Dataset link for download: <br/>
 <a href="https://drive.google.com/file/d/1_jOclJy3AFbSHzKsuIh7QD-UOsb5p2RT/view?usp=drive_link">MRCD Dataset<a>
 
